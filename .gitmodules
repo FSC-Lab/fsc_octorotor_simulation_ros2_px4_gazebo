@@ -1,6 +1,3 @@
-[submodule "ros2_node/src/src/px4_msgs"]
-	path = ros2_node/src/src/px4_msgs
-	url = https://github.com/PX4/px4_msgs.git
 [submodule "ros2_node/src/px4_msgs"]
 	path = ros2_node/src/px4_msgs
 	url = https://github.com/PX4/px4_msgs.git

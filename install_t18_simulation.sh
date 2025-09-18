@@ -2,6 +2,32 @@
 
 # install scripts for the t18 simulation environment
 
+
+# ================= PX4_MSGS SETUP =================
+ROS2_WS=~/fsc_octorotor_simulation_ros2/ros2_node
+PX4_MSGS_DIR=$ROS2_WS/src/px4_msgs
+
+# create src folder if missing
+mkdir -p "$ROS2_WS/src"
+
+if [ -d "$PX4_MSGS_DIR" ]; then
+    echo "px4_msgs already exists, resetting to correct version..."
+    cd "$PX4_MSGS_DIR" || exit
+    git fetch origin
+    git checkout release/1.15
+    git reset --hard a1045ec
+    echo "Reset px4_msgs to the correct version successfully!"
+else
+    echo "Cloning px4_msgs repository..."
+    git clone https://github.com/PX4/px4_msgs.git "$PX4_MSGS_DIR"
+    cd "$PX4_MSGS_DIR" || exit
+    git checkout release/1.15
+    git reset --hard a1045ec
+    echo "Cloned px4_msgs successfully!"
+fi
+
+
+
 # ================= PX4 AIRFRAME SETUP =================
 SRC_AIRFRAME_DIR=~/fsc_octorotor_simulation_ros2/px4_airframe_configuration/4012_gz_t18 # source directory
 DEST_AIRFRAME_DIR=~/PX4-Autopilot/ROMFS/px4fmu_common/init.d-posix/airframes/ # destination directory

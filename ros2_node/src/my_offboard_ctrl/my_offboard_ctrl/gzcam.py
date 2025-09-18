@@ -47,4 +47,3 @@ if __name__ == "__main__":
     img = cam.get_next_image()
     cv2.imshow('pic-display', img)
     cv2.waitKey(1)
-

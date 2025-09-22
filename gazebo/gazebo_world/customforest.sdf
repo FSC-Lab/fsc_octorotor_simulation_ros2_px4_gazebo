@@ -162,11 +162,9 @@
       <ambient>0.8 0.5 1 1</ambient> <!-- changed from 0.4 0.4 0.4 1 -->
       <background>0.7 0.7 0.7 1</background>
       <!-- added sky -->
-      <!--
       <sky>
-        <clouds>true</clouds>
+        <clouds>false</clouds>
       </sky>
-      -->
       <shadows>false</shadows>
     </scene>
     <model name="ground_plane">

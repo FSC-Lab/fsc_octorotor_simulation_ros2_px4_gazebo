@@ -4,7 +4,7 @@
 
 
 # ================= PX4_MSGS SETUP =================
-ROS2_WS=~/fsc_octorotor_simulation_ros2/ros2_node
+ROS2_WS=~/fsc_octorotor_simulation_ros2_px4_gazebo/ros2_node
 PX4_MSGS_DIR=$ROS2_WS/src/px4_msgs
 
 # create src folder if missing
@@ -29,7 +29,7 @@ fi
 
 
 # ================= PX4 AIRFRAME SETUP =================
-SRC_AIRFRAME_DIR=~/fsc_octorotor_simulation_ros2/px4_airframe_configuration/4012_gz_t18 # source directory
+SRC_AIRFRAME_DIR=~/fsc_octorotor_simulation_ros2_px4_gazebo/px4_airframe_configuration/4012_gz_t18 # source directory
 DEST_AIRFRAME_DIR=~/PX4-Autopilot/ROMFS/px4fmu_common/init.d-posix/airframes/ # destination directory
 DEST_AIRFRAME_FILE="$DEST_AIRFRAME_DIR/4012_gz_t18"
 
@@ -63,7 +63,7 @@ fi
 
 
 # ================= GAZEBO MODEL SETUP =================
-SRC_MODELS_DIR=~/fsc_octorotor_simulation_ros2/gazebo/gazebo_model # source directory
+SRC_MODELS_DIR=~/fsc_octorotor_simulation_ros2_px4_gazebo/gazebo/gazebo_model # source directory
 DEST_MODELS_DIR=~/PX4-Autopilot/Tools/simulation/gz/models # destination directory
 
 # create destination directory if it doesn't exist
@@ -93,7 +93,7 @@ done
 
 
 # ================= GAZEBO WORLD SETUP =================
-SRC_WORLDS_DIR=~/fsc_octorotor_simulation_ros2/gazebo/gazebo_world # source directory
+SRC_WORLDS_DIR=~/fsc_octorotor_simulation_ros2_px4_gazebo/gazebo/gazebo_world # source directory
 DEST_WORLDS_DIR=~/PX4-Autopilot/Tools/simulation/gz/worlds # destination directory
 
 # create destination directory if it doesn't exist

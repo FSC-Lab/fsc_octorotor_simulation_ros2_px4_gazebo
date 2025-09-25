@@ -55,7 +55,7 @@ First, clone this repository to your home directory:
 
 ```bash
 cd ~
-git clone fsc_octorotor_simulation_ros2_px4_gazebo
+git clone --recursive https://github.com/FSC-Lab/fsc_octorotor_simulation_ros2.git
 ```
 
 This step downloads all the necessary simulation files including:
@@ -69,7 +69,7 @@ This step downloads all the necessary simulation files including:
 Navigate to the repository and run the installation script:
 
 ```bash
-cd ~/fsc_octorotor_simulation_ros2_px4_gazebo
+cd ~/fsc_octorotor_simulation_ros2
 chmod +x install_t18_simulation.sh
 ./install_t18_simulation.sh
 ```
@@ -78,7 +78,7 @@ The installation script performs four main setup tasks:
 
 **px4_msgs Installation**
 - Ensures ROS2 uses correct PX4 message definition by:
-  - First checking if the `px4_msgs` repository already exists in the `~/fsc_octorotor_simulation_ros2_px4_gazebo/ros2_node/src` directory.
+  - First checking if the `px4_msgs` repository already exists in the `~/fsc_octorotor_simulation_ros2/ros2_node/src` directory.
   - If the repository is not found, the script clones it from the official PX4 GitHub ([px4_msgs](https://github.com/PX4/px4_msgs/tree/95a7c089782afe8d92fee8cd68c50b9ef2cfbd65)).
   - If it exists, the script updates it to match the exact version (v1.15.4) required for this simulation.
 - This allows proper communication between ROS2 and PX4
@@ -153,7 +153,7 @@ Note that either `gz_t18` (T18 octorotor) or `gz_t18_mono_cam` (T18 with monocul
 Wait until you see the message **`INFO  [uxrce_dds_client] time sync converged`** in the PX4 terminal before running the ROS2 node.
 #### 3. Execute ROS2 Node:
 ```bash
-cd ~/fsc_octorotor_simulation_ros2_px4_gazebo/ros2_node
+cd ~/fsc_octorotor_simulation_ros2/ros2_node
 colcon build
 source install/local_setup.bash
 ros2 run my_offboard_ctrl offboard_ctrl_example
@@ -161,7 +161,7 @@ ros2 run my_offboard_ctrl offboard_ctrl_example
 Note: The first build may take some time to complete (up to ~10 minutes).
 
 ## Troubleshooting
-- Make sure that `PX4-Autopilot`, `fsc_octorotor_simulation_ros2_px4_gazebo`, and `px4_ros_uxrce_dds_ws` are all located in your home directory (`~/`).
+- Make sure that `PX4-Autopilot`, `fsc_octorotor_simulation_ros2`, and `px4_ros_uxrce_dds_ws` are all located in your home directory (`~/`).
 - You may encounter the following error messages when launching Gazebo:
   ```bash
   ERROR [gz_bridge] Service call timed out. Check GZ_SIM_RESOURCE_PATH is set correctly.
@@ -182,14 +182,14 @@ Note: The first build may take some time to complete (up to ~10 minutes).
   git branch --show-current
   ```
   ```bash
-  cd ~/fsc_octorotor_simulation_ros2_px4_gazebo/ros2_node/src/px4_msgs/
+  cd ~/fsc_octorotor_simulation_ros2/ros2_node/src/px4_msgs/
   git describe --tags --always
   git branch --show-current
   ```
   By running the installation script, it will automatically match the version.
 ## File Structure
 ```
-fsc_octorotor_simulation_ros2_px4_gazebo/
+fsc_octorotor_simulation_ros2/
 ├── install_t18_simulation.sh          # Main installation script
 ├── px4_airframe_configuration/
 │   ├── 4012_gz_t18                    # T18 airframe configuration

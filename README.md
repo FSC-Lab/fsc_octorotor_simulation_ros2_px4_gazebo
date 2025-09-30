@@ -1,6 +1,6 @@
 # Octorotor Drone Simulation Environment for Forest Monitoring (ROS2, PX4, Gazebo)
 
-![Overview gif](media/1.gif)
+https://github.com/user-attachments/assets/69ffb933-ad47-47fb-954c-ce5358c2a3bf
 
 This repository contains the simulation environment for the Tarot T18 octorotor drone designed for plant health monitoring using PX4, Gazebo, and ROS2.
 
